@@ -1,0 +1,57 @@
+[% WRAPPER 'include/layout.tt' %]
+
+[% INCLUDE 'include/h1.tt' %]
+
+<hr />
+
+<div class="span12">
+    <h2>Create Client</h2>
+    <p><a href="/clients">Registered clients</a></p>
+    <div class="span12">
+        <form method="POST" action="/clients/new">
+            <fieldset>
+            <label>Name</label>
+            <input type="text" name="name" id="name" placeholder="Client Name" required>
+            <label>Redirect URIs</label>
+            <textarea row="2" name="redirect_uris" id="redirect_uris" required></textarea>
+            <label>Client Type</label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_1" value="1">
+              Web Client<br />
+              Allowed grant_types:
+              <pre>"code", "code id_token"</pre>
+              Allowed grant_types:
+              <pre>"authorization_code", "refresh_token"</pre>
+            </label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_2" value="2">
+              JavaScript Client<br />
+              Allowed grant_types:
+              <pre>"id_token", "id_token token"</pre>
+              Allowed grant_types: none
+            </label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_3" value="3">
+              Mobile App<br />
+              Allowed grant_types:
+              <pre>"code", "id_token", "id_token token", "code id_token token"</pre>
+              Allowed grant_types:
+              <pre>"authorization_code", "refresh_token"</pre>
+            </label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_4" value="4" checked>
+              Full App<br />
+              Allowed grant_types:
+              <pre>"code", "id_token", "token", "code id_token", "code token", "id_token token", "code id_token token"</pre>
+              Allowed grant_types:
+              <pre>"authorization_code", "refresh_token"</pre>
+            </label>
+            <button type="submit" class="btn btn-primary">Create</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+[% END %]

@@ -1,0 +1,14 @@
+        <div class="span12">
+            <h3>Response URI</h3>
+            <label>URI</label>
+            <pre>[% response_info.uri %]</pre>
+            [% IF response_info.query_string %]
+            <label>Query</label>
+            <pre>[% response_info.query_string %]</pre>
+            [% END %]
+            [% IF response_info.fragment_string %]
+            <label>Fragment</label>
+            <pre>[% response_info.fragment_string %]</pre>
+            [% END %]
+            <p><a href="[% response_info.uri %]">Redirect to client</a></p>
+        </div>

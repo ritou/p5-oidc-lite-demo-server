@@ -1,0 +1,47 @@
+            <div class="span12">
+                <div class="accordion-heading">
+                    <h3><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_authorize" href="#collapseRequest">Authorization request</a></h3>
+                    <p>Spec : <a href="http://openid.net/specs/openid-connect-messages-1_0-20.html#AuthorizationRequest">OpenID Connect Messages 1.0 - draft 20 : 2.1.1.  Authorization Request</a></p>
+                </div>
+                <div id="collapseRequest" class="accordion-body collapse">
+                    <fieldset>
+                    [% IF request_uri %]
+                    <label>Request URI</label>
+                    <pre>[% request_uri %]</pre>
+                    [% END %]
+                    <!-- params -->
+                    [% IF params.response_type %]
+                    <label>response_type</label>
+                    <pre>[% params.response_type %]</pre>
+                    [% END %]
+                    [% IF params.client_id %]
+                    <label>client_id</label>
+                    <pre>[% params.client_id %]</pre>
+                    [% END %]
+                    [% IF params.redirect_uri %]
+                    <label>redirect_uri</label>
+                    <pre>[% params.redirect_uri %]</pre>
+                    [% END %]
+                    [% IF params.scope %]
+                    <label>scope</label>
+                    <pre>[% params.scope %]</pre>
+                    [% END %]
+                    [% IF params.state %]
+                    <label>state</label>
+                    <pre>[% params.state %]</pre>
+                    [% END %]
+                    [% IF params.nonce %]
+                    <label>nonce</label>
+                    <pre>[% params.nonce %]</pre>
+                    [% END %]
+                    [% IF params.display %]
+                    <label>display</label>
+                    <pre>[% params.display %]</pre>
+                    [% END %]
+                    [% IF params.prompt %]
+                    <label>prompt</label>
+                    <pre>[% params.prompt %]</pre>
+                    [% END %]
+                    </fieldset>
+                </div>
+            </div>

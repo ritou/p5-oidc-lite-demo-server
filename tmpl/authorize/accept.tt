@@ -1,0 +1,30 @@
+[% WRAPPER 'include/layout.tt' %]
+
+[% INCLUDE 'include/h1.tt' %]
+
+<hr />
+
+<div class="span12">
+    <h2>Authorization Endpoint (Return to Client)</h2>
+    <div class="row">
+        <div class="span12">
+            <pre>status : [% status %]</pre>
+        </div>
+        [% IF response_info %]
+        [% INCLUDE 'include/redirect_to_client.tt' %]
+        [% END %]
+    </div>
+    <div class="row accordion" id="accordion_authorize">
+        [% INCLUDE 'include/request.tt' %]
+        [% IF client_info %]
+        [% INCLUDE 'include/client_info.tt' %]
+        [% END %]
+        [% IF claims %]
+        [% INCLUDE 'include/claims.tt' %]
+        [% END %]
+    </div>
+</div>
+
+<hr />
+
+[% END %]

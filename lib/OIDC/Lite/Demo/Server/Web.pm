@@ -5,6 +5,10 @@ use utf8;
 use parent qw/OIDC::Lite::Demo::Server Amon2::Web/;
 use File::Spec;
 
+# load all controller classes
+use Module::Find ();
+Module::Find::useall("OIDC::Lite::Demo::Server::Web::C");
+
 # dispatcher
 use OIDC::Lite::Demo::Server::Web::Dispatcher;
 sub dispatch {
@@ -16,6 +20,7 @@ __PACKAGE__->load_plugins(
     'Web::FillInFormLite',
     'Web::CSRFDefender' => {
         post_only => 1,
+        no_validate_hook => 1,
     },
 );
 

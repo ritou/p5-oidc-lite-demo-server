@@ -1,0 +1,71 @@
+[% WRAPPER 'include/layout.tt' %]
+
+[% INCLUDE 'include/h1.tt' %]
+
+<hr />
+
+<div class="span12">
+    <h2>Edit Client</h2>
+    <p><a href="/clients">Registered clients</a></p>
+    <div class="span12">
+        <form method="POST" action="/clients/[% client.id %]/edit">
+            <fieldset>
+            <p>id : [% client.id %]</p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" placeholder="Client Name" value="[% client.name %]" required>
+            <label>Redirect URIs</label>
+            <textarea row="2" name="redirect_uris" id="redirect_uris" required>[% FOREACH uri IN client.redirect_uris %]
+[% uri %][% END %]</textarea>
+            <label>Client Type</label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_1" value="1"
+              [% IF client.client_type == 1 %]
+              checked
+              [% END %]>
+              Web Client<br />
+              Allowed grant_types:
+              <pre>"code", "code id_token"</pre>
+              Allowed grant_types:
+              <pre>"authorization_code", "refresh_token"</pre>
+            </label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_2" value="2"
+              [% IF client.client_type == 2 %]
+              checked
+              [% END %]>
+              JavaScript Client<br />
+              Allowed grant_types:
+              <pre>"id_token", "id_token token"</pre>
+              Allowed grant_types: none
+            </label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_3" value="3"
+              [% IF client.client_type == 3 %]
+              checked
+              [% END %]>
+              Mobile App<br />
+              Allowed grant_types:
+              <pre>"code", "id_token", "id_token token", "code id_token token"</pre>
+              Allowed grant_types:
+              <pre>"authorization_code", "refresh_token"</pre>
+            </label>
+            <label class="radio">
+              <input type="radio" name="client_type" id="client_type_4" value="4"
+              [% IF client.client_type == 4 %]
+              checked
+              [% END %]>
+              Full App<br />
+              Allowed grant_types:
+              <pre>"code", "id_token", "token", "code id_token", "code token", "id_token token", "code id_token token"</pre>
+              Allowed grant_types:
+              <pre>"authorization_code", "refresh_token"</pre>
+            </label>
+            <button type="submit" class="btn btn-primary">Registration</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+[% END %]

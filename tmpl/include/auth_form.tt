@@ -1,0 +1,12 @@
+        <div class="span12">
+            This client would to access your claims by following scopes.
+            <ul>
+                [% FOREACH scope IN scopes %]
+                <li>[% scope %]</li>
+                [% END %]
+            </ul>
+            <form action="[% request_uri %]" method="POST">
+                <input class="btn" type="submit" name="user_action" value="cancel">
+                <input class="btn btn-primary" type="submit" name="user_action" value="accept">
+            </form>
+        </div>

@@ -1,16 +1,22 @@
-requires 'perl', '5.008001';
 requires 'Amon2', '3.87';
 requires 'Text::Xslate', '1.6001';
 requires 'Amon2::DBI'                     , '0.30';
 requires 'DBD::SQLite'                    , '1.33';
 requires 'HTML::FillInForm::Lite'         , '1.11';
-requires 'JSON'                           , '2.50';
+requires 'JSON'                           , '0';
 requires 'Module::Functions'              , '2';
 requires 'Plack::Middleware::ReverseProxy', '0.09';
 requires 'Plack::Middleware::Session'     , '0';
 requires 'Plack::Session'                 , '0.14';
 requires 'Test::WWW::Mechanize::PSGI'     , '0';
 requires 'Time::Piece'                    , '1.20';
+requires 'Teng'                           , '0.19';
+
+requires 'OAuth::Lite2'                   , '0.05';
+requires 'OIDC::Lite'                     , '0.04';
+requires 'Crypt::OpenSSL::Random'         , '0';
+requires 'Digest::SHA'                    , '0';
+requires 'Module::Find'                   , '0';
 
 on 'configure' => sub {
    requires 'Module::Build', '0.38';

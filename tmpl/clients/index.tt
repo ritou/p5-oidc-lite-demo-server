@@ -1,0 +1,77 @@
+[% WRAPPER 'include/layout.tt' %]
+
+[% INCLUDE 'include/h1.tt' %]
+
+<hr />
+
+<div class="span12">
+    <h2>Registered Clients</h2>
+    <p><a href="/clients/new">create Client</a></p>
+    <div class="row span12">
+    [% IF clients_cnt > 0 %]
+        <table class="table">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>Name</td>
+            <td>client_type</td>
+            <td>Info</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        [% FOREACH client IN clients %]
+        <tr>
+            <td>[% client.id %]</td>
+            <td>[% client.name %]</td>
+            <td>
+            [% SWITCH client.client_type %]
+            [% CASE 1 %]
+            Web Client
+            [% CASE 2 %]
+            JavaScript Client
+            [% CASE 3 %]
+            Mobile App
+            [% CASE 4 %]
+            Full Client
+            [% END %]
+            </td>
+            <td>
+            <pre>
+client_id : 
+ [% client.client_id %]
+
+client_secret : 
+ [% client.client_secret %]
+
+redirect_uris:
+[% FOREACH uri IN client.redirect_uris %] [% uri %]
+[% END %]
+allowed_response_types:
+[% FOREACH type IN client.allowed_response_types %] [% type %]
+[% END %]
+allowed_grant_types:
+[% FOREACH type IN client.allowed_grant_types %] [% type %]
+[% END %]</pre>
+            </td>
+            <td>
+                <form method="GET" action="/clients/[% client.id %]/edit">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                </form>
+                <form method="POST" action="/clients/[% client.id %]/disable">
+                <button type="submit" class="btn btn-danger">Disable</button>
+                </form>
+            </td>
+        </tr>
+        [% END %]
+        </tbody>
+        </table>
+    [% ELSE %]
+        <p>no Clients</p>
+    </div>
+    [% END %]
+</div>
+
+<hr />
+
+[% END %]

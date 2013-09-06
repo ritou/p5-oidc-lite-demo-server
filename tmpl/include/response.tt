@@ -1,0 +1,12 @@
+        <h3>Authorization response</h3>
+        <div>
+            <p>Spec : <a href="http://openid.net/specs/openid-connect-messages-1_0-20.html#AuthzResponse">OpenID Connect Messages 1.0 - draft 20 : 2.1.2.  Authorization Response</a></p>
+            <fieldset>
+            <label>Redirect URI</label>
+            <pre>[% response_info.redirect_uri %]</pre>
+            <label>Response params in Query</label>
+            <pre>[% response_info.query_string %]</pre>
+            <label>Response params in Fragment</label>
+            <pre>[% response_info.fragment_string %]</pre>
+            </fieldset>
+        </div>

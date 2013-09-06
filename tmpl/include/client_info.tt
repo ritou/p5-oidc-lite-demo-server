@@ -1,0 +1,39 @@
+            <div class="span12">
+                <div class="accordion-heading">
+                    <h3><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_authorize" href="#collapseClientInfo">Client Information</a></h3>
+                </div>
+                <div id="collapseClientInfo" class="accordion-body collapse">
+                    <fieldset>
+                    [% IF client_info.name %]
+                    <label>name</label>
+                    <pre>[% client_info.name %]</pre>
+                    [% END %]
+                    [% IF client_info.client_id %]
+                    <label>client_id</label>
+                    <pre>[% client_info.client_id %]</pre>
+                    [% END %]
+                    [% IF client_info.redirect_uris %]
+                    <label>redirect_uris</label>
+                    [% FOREACH uri IN client_info.redirect_uris %]
+                    <pre>[% uri %]</pre>
+                    [% END %]
+                    [% END %]
+                    [% IF client_info.allowed_response_types %]
+                    <label>allowed response_type</label>
+                    <ul>
+                    [% FOREACH type IN client_info.allowed_response_types %]
+                    <li>[% type %]</li>
+                    [% END %]
+                    </ul>
+                    [% END %]
+                    [% IF client_info.allowed_grant_types %]
+                    <label>allowed grant_type</label>
+                    <ul>
+                    [% FOREACH type IN client_info.allowed_grant_types %]
+                    <li>[% type %]</li>
+                    [% END %]
+                    </ul>
+                    [% END %]
+                    </fieldset>
+                </div>
+            </div>
