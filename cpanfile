@@ -25,4 +25,5 @@ on 'configure' => sub {
 
 on 'test' => sub {
    requires 'Test::More', '0.98';
+   requires 'Test::MockObject', '0';
 };

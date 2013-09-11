@@ -50,6 +50,7 @@
             "Digest::SHA" : "0",
             "HTML::FillInForm::Lite" : "1.11",
             "JSON" : "0",
+            "Module::Find" : "0",
             "Module::Functions" : "2",
             "OAuth::Lite2" : "0.05",
             "OIDC::Lite" : "0.04",

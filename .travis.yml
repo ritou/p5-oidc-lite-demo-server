@@ -1,0 +1,14 @@
+language: perl
+perl:
+  - "5.18"
+  - "5.16"
+  - "5.14"
+  - "5.12"
+  - "5.10"
+  - "5.8"
+before-install:
+  - sudo apt-get update
+  - sudo apt-get install libssl-dev libxml2-dev
+install:
+  - cpanm -v --installdeps --notest .
+script: "perl Build.PL && ./Build test"
