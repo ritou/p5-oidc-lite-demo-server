@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "OIDC-Lite-Demo-Server",
+   "name" : "oidc-lite-demo-server",
    "no_index" : {
       "directory" : [
          "t",
@@ -67,6 +67,7 @@
       "test" : {
          "requires" : {
             "Test::MockObject" : "0",
+            "Test::MockTime" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -78,8 +79,7 @@
       },
       "homepage" : "https://github.com/ritou/p5-oidc-lite-demo-server",
       "repository" : {
-         "type" : "git",
-         "url" : "git://github.com/ritou/p5-oidc-lite-demo-server.git",
+         "url" : "https://github.com/ritou/p5-oidc-lite-demo-server.git",
          "web" : "https://github.com/ritou/p5-oidc-lite-demo-server"
       }
    },
