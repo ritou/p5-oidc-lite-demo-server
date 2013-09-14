@@ -11,7 +11,6 @@ use OIDC::Lite::Demo::Server::Web::M::AccessToken;
 use OIDC::Lite::Demo::Server::Web::M::AuthInfo;
 use OIDC::Lite::Demo::Server::Web::M::Client;
 
-# client info on session
 my $client;
 my $c = OIDC::Lite::Demo::Server->new;
 

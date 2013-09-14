@@ -12,6 +12,9 @@ use Crypt::OpenSSL::Random qw/
     random_pseudo_bytes
 /;
 
+use OIDC::Lite::Demo::Server;
+my $c = OIDC::Lite::Demo::Server->new;
+
 # sample client data
 our $SAMPLE_CLIENTS = {
     'sample_client_id' => {
@@ -20,7 +23,7 @@ our $SAMPLE_CLIENTS = {
         'client_id' => q{sample_client_id},
         'client_secret' => q{sample_client_secret},
         'redirect_uris' => [
-            q{http://localhost:5000/sample/callback},
+            $c->config->{SampleClient}->{redirect_uri},
         ],
         'allowed_response_types' => [
             q{code}, q{id_token}, q{token},

@@ -9,6 +9,9 @@ my $dbpath = File::Spec->catfile($basedir, 'db', 'development.db');
             sqlite_unicode => 1,
         }
     ],
+    'SampleClient' => {
+        'redirect_uri' => q{http://localhost:5000/sample/callback},
+    },
     'OIDC' => {
         'id_token' => {
             'iss' => q{localhost:5001},
