@@ -1,22 +1,25 @@
-requires 'Amon2', '3.87';
-requires 'Text::Xslate', '1.6001';
-requires 'Amon2::DBI'                     , '0.30';
-requires 'DBD::SQLite'                    , '1.33';
-requires 'HTML::FillInForm::Lite'         , '1.11';
-requires 'JSON'                           , '0';
-requires 'Module::Functions'              , '2';
-requires 'Plack::Middleware::ReverseProxy', '0.09';
-requires 'Plack::Middleware::Session'     , '0';
-requires 'Plack::Session'                 , '0.14';
-requires 'Test::WWW::Mechanize::PSGI'     , '0';
+requires 'Amon2', '6.09';
+requires 'Text::Xslate', '3.3.3';
+requires 'Amon2::DBI'                     , '0.32';
+requires 'DBD::SQLite'                    , '1.42';
+requires 'HTML::FillInForm::Lite'         , '1.13';
+requires 'JSON'                           , '2.90';
+requires 'Module::Functions'              , '2.1.3';
+requires 'Plack::Middleware::ReverseProxy', '0.15';
+requires 'Plack::Middleware::Session'     , '0.22';
+requires 'Plack::Session'                 , '0.22';
+requires 'Test::WWW::Mechanize::PSGI'     , '0.35';
 requires 'Time::Piece'                    , '1.20';
-requires 'Teng'                           , '0.19';
+requires 'Teng'                           , '0.25';
 
-requires 'OAuth::Lite2'                   , '0.05';
-requires 'OIDC::Lite'                     , '0.04';
+requires 'OAuth::Lite2'                   , '0.10';
+requires 'OIDC::Lite'                     , '0.08';
 requires 'Crypt::OpenSSL::Random'         , '0';
 requires 'Digest::SHA'                    , '0';
 requires 'Module::Find'                   , '0';
+
+requires 'Router::Simple::Sinatraish'     , '0.03';
+requires 'Amon2::Plugin::Web::CSRFDefender' , '7.02';
 
 on 'configure' => sub {
    requires 'Module::Build', '0.38';
